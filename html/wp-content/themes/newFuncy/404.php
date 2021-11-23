@@ -9,6 +9,9 @@
 
 get_header();
 ?>
-    <h1>Error, página no encontrada</h1>
+    <div id="div_error_404" >
+        <h1>Error, página no encontrada</h1>
+        <img src="https://thumbs.gfycat.com/ImperfectFixedCougar-size_restricted.gif">
+    </div>
 <?php
 get_footer();

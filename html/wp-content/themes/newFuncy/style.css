@@ -15,12 +15,24 @@ Use it to make something cool, have fun, and share what you've learned with othe
 */
 
 body {
-    background-color: #8aff82;
+    background-image: url("https://static.vecteezy.com/system/resources/previews/000/558/906/non_2x/seamless-pattern-of-cute-white-rabbit-with-carrot-on-white-background-vector-illustration.jpg");
 }
 
 h1 {
     text-align: center;
-    color: white;
+}
+
+#div_error_404 {
+    border: coral dotted;
+    color: #ff339b;
+}
+
+#cabecera {
+    color: #ff8936;
+}
+
+#piedepagina {
+    color: #ff8700
 }
 
 img {

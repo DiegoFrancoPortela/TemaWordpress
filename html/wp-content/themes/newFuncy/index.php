@@ -3,8 +3,6 @@
     <head>
         <meta charset="utf-8">
         <title>New Funcy</title>
-    </head>
-
     <body>
 
     <?php get_header() ?>
@@ -12,8 +10,9 @@
     <div id="cuerpo">
 
         <?php
-            echo ("<h1> Div Cuerpo </h1>")
+            echo ("<h1> Conejo Full Stack Developer </h1>")
         ?>
+        <img src="https://i.gifer.com/8CUe.gif">
     </div>
 
     <? get_footer() ?>
