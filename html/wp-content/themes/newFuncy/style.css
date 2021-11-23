@@ -28,10 +28,12 @@ h1 {
 }
 
 #cabecera {
+    float: left;
     color: #ff8936;
 }
 
 #piedepagina {
+    float: right;
     color: #ff8700
 }
 

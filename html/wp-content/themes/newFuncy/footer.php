@@ -1,3 +1,3 @@
 <div id="piedepagina">
-    <h1>Footer Bunny</h1>
+    <h1>Conejo</h1>
 </div>
