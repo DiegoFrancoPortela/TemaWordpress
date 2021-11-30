@@ -14,8 +14,30 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 
-body {
+body, html {
+    height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#bg-image {
     background-image: url("https://static.vecteezy.com/system/resources/previews/000/558/906/non_2x/seamless-pattern-of-cute-white-rabbit-with-carrot-on-white-background-vector-illustration.jpg");
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    height: 100%;
+}
+
+#div_principal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
 }
 
 h1 {
@@ -32,12 +54,27 @@ h1 {
     color: #ff8936;
 }
 
-#piedepagina {
-    float: right;
-    color: #ff8700
-}
-
 img {
     display: block;
     margin: auto;
+}
+
+#contenedor_imagen {
+    float: left;
+}
+
+#imagen {
+    height: 200px;
+    width: 200px;
+    border: 1px;
+}
+
+#h3_titulo {
+    margin-left: 18%;
+    color: #ff8936;
+}
+
+#p_texto {
+    margin-left: 18%;
+    font-weight: bold;
 }
