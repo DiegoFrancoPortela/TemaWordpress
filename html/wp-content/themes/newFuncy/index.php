@@ -1,27 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>New Funcy</title>
-    <body>
+<head>
+    <meta charset="utf-8">
+    <title>New Funcy</title>
+</head>
 
-    <div id="bg-image"></div>
+<body>
 
-    <div id="div_principal">
-        <p id="contenedor_imagen"><img src="https://i.gifer.com/8CUe.gif" id="imagen"></p>
+<?php get_header() ?>
+<?php define( 'WP_USE_THEMES', false ); get_header(); ?>
+
+<!-- Start the Loop. -->
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
+<!-- Test if the current post is in category 3. -->
+<!-- If it is, the div box is given the CSS class "post-cat-three". -->
+<!-- Otherwise, the div box is given the CSS class "post". -->
+
+<?php if ( in_category( '3' ) ) : ?>
+<div class="post-cat-three">
+    <?php else : ?>
+    <div class="post">
+        <?php endif; ?>
+        <div class="imagen">
+            <?php the_post_thumbnail('thumbnail');?>
+        </div>
+
+        <!-- Display the Title as a link to the Post's permalink. -->
+        <div class="title_post">
+            <h2><a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+        </div>
+
+        <!-- Display the date (November 16th, 2009 format) and a link to other posts by this posts author. -->
+
+        <small><?php the_time('F jS, Y'); ?> by <?php the_author_posts_link(); ?></small>
+
+
+        <!-- Display the Post's content in a div box. -->
+
+        <div class="entry">
+            <?php the_content(); ?>
+        </div>
+
+
+        <!-- Display a comma separated list of the Post's Categories. -->
+
+        <p class="postmetadata"><?php _e( 'Posted in' ); ?> <?php the_category( ', ' ); ?></p>
         <br>
-        <h3 id="h3_titulo">Desenvolvedor Rabbit Full Stack</h3>
-        <p id="p_texto">Este coelho é o coelho Full Stack Developer, pode ser apreciado pelo incrível cansaço que sente quando está na frente do computador. Ele trabalha incansavelmente para alimentar sua família. Simplesmente um conchasumadre.</p>
-    </div>
+    </div> <!-- closes the first div box -->
 
-    <div id="div_principal2">
-        <p id="contenedor_imagen"><img src="https://www.lavanguardia.com/files/content_image_mobile_filter/uploads/2021/03/26/605daf04cfa16.jpeg" id="imagen"></p>
-        <br>
-        <h3 id="h3_titulo">Pinho Coelho</h3>
-        <p id="p_texto">Este coelho conchesumadre que anda sobre duas pernas, simplesmente épico, coelho da capoeira.</p>
-    </div>
 
-    <? get_header() ?>
+    <!-- Stop The Loop (but note the "else:" - see next line). -->
 
-    </body>
+    <?php endwhile; else : ?>
+
+
+        <!-- The very first "if" tested to see if there were any Posts to -->
+        <!-- display.  This "else" part tells what do if there weren't any. -->
+        <p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
+
+
+        <!-- REALLY stop The Loop. -->
+    <?php endif; ?>
+
+    <?php get_footer() ?>
+</body>
 </html>
